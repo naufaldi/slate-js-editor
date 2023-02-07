@@ -1,7 +1,7 @@
 import React, { Ref, PropsWithChildren } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Box } from '@chakra-ui/react';
+import { Box, Container, Flex } from '@chakra-ui/react';
 
 interface BaseProps {
   className: string;
@@ -12,7 +12,6 @@ type OrNull<T> = T | null;
 export const Button = React.forwardRef(
   (
     {
-      className,
       active,
       reversed,
       ...props
@@ -26,6 +25,7 @@ export const Button = React.forwardRef(
   ) => (
     <Box
       as="span"
+      boxSize={'20px'}
       cursor={'pointer'}
       color={reversed ? (active ? 'white' : '#aaa') : active ? 'black' : '#ccc'}
       {...props}
@@ -35,43 +35,45 @@ export const Button = React.forwardRef(
 );
 
 export const Icon = React.forwardRef(
-  (
-    { className, ...props }: PropsWithChildren<BaseProps>,
-    ref: Ref<OrNull<null>>
-  ) => (
+  ({ ...props }: PropsWithChildren<BaseProps>, ref: Ref<OrNull<null>>) => (
     <Box
       as="span"
       {...props}
       ref={ref}
-      fontSize="18px"
+      fontSize="20px"
       verticalAlign="text-bottom"
-      className="material-icons"
     />
   )
 );
 
 export const Menu = React.forwardRef(
   (
-    { className, ...props }: PropsWithChildren<BaseProps>,
+    { ...props }: PropsWithChildren<BaseProps>,
     ref: Ref<OrNull<HTMLDivElement>>
   ) => (
-    <Box
-      {...props}
-      ref={ref}
-      position="relative"
-      padding="1px 18px 17px"
-      margin="0 -20px"
-      borderBottom="2px solid #eee"
-      marginBottom="20px"
-      sx={{
-        '& > *': {
-          display: 'inline-block',
-        },
-        '& > * + *': {
-          marginLeft: '15px',
-        },
-      }}
-    />
+    <Container maxW="6xl">
+      <Flex
+        justifyContent={'center'}
+        alignItems={'center'}
+        {...props}
+        ref={ref}
+        position="relative"
+        flexWrap={'wrap'}
+        gap="2px"
+        padding="18px"
+        margin="0 -20px"
+        borderBottom="2px solid #eee"
+        marginBottom="20px"
+        sx={{
+          '& > *': {
+            display: 'inline-block',
+          },
+          '& > * + *': {
+            marginLeft: '15px',
+          },
+        }}
+      />
+    </Container>
   )
 );
 
@@ -80,10 +82,3 @@ export const Portal = ({ children }) => {
     ? ReactDOM.createPortal(children, document.body)
     : null;
 };
-
-export const Toolbar = React.forwardRef(
-  (
-    { className, ...props }: PropsWithChildren<BaseProps>,
-    ref: Ref<OrNull<HTMLDivElement>>
-  ) => <Menu {...props} ref={ref} />
-);

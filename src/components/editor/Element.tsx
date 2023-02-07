@@ -1,47 +1,70 @@
+import {
+  Heading,
+  Link,
+  ListItem,
+  OrderedList,
+  Text,
+  UnorderedList,
+} from '@chakra-ui/react';
+import { BlockQuote } from './custom';
+import { Code } from './custom/Code';
+
 export const Element = ({ attributes, children, element }) => {
   const style = { textAlign: element.align };
   switch (element.type) {
     case 'block-quote':
       return (
-        <blockquote style={style} {...attributes}>
+        <BlockQuote style={style} {...attributes}>
           {children}
-        </blockquote>
+        </BlockQuote>
+      );
+    case 'code':
+      return (
+        <Code style={style} {...attributes}>
+          {children}
+        </Code>
+      );
+    case 'link':
+      return (
+        <Link style={style} {...attributes} url={element.url}>
+          {children}
+        </Link>
       );
     case 'bulleted-list':
       return (
-        <ul style={style} {...attributes}>
+        <UnorderedList style={style} {...attributes}>
           {children}
-        </ul>
+        </UnorderedList>
       );
     case 'heading-one':
       return (
-        <h1 style={style} {...attributes}>
+        <Heading as="h1" style={style} {...attributes}>
           {children}
-        </h1>
+        </Heading>
       );
     case 'heading-two':
       return (
-        <h2 style={style} {...attributes}>
+        <Heading as="h2" style={style} {...attributes}>
           {children}
-        </h2>
+        </Heading>
       );
     case 'list-item':
       return (
-        <li style={style} {...attributes}>
+        <ListItem style={style} {...attributes}>
           {children}
-        </li>
+        </ListItem>
       );
     case 'numbered-list':
       return (
-        <ol style={style} {...attributes}>
+        <OrderedList style={style} {...attributes}>
           {children}
-        </ol>
+        </OrderedList>
       );
     default:
       return (
-        <p style={style} {...attributes}>
+        <Text style={style} {...attributes}>
           {children}
-        </p>
+        </Text>
       );
   }
 };
