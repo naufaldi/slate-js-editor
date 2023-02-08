@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import { CustomEditorProps } from '../../../types';
 
@@ -12,7 +12,7 @@ export const BlockQuote: FC<CustomEditorProps> = ({
       {...attributes}
       style={{ ...style }}
       as="blockquote"
-      backgroundColor="gray.100"
+      backgroundColor={useColorModeValue('gray.200', 'gray.600')}
       borderLeft="10px solid #ccc"
       margin="1.5em 10px"
       padding="0.5em 10px"
