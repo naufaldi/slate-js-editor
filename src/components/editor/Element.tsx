@@ -24,12 +24,7 @@ export const Element = ({ attributes, children, element }) => {
           {children}
         </Code>
       );
-    case 'link':
-      return (
-        <Link style={style} {...attributes} url={element.url}>
-          {children}
-        </Link>
-      );
+
     case 'bulleted-list':
       return (
         <UnorderedList style={style} {...attributes}>

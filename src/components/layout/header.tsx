@@ -29,13 +29,13 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Container as={Stack} maxW={'6xl'} py={1}>
           <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-            <Box>Logo</Box>
+            <Box>Naufaldi</Box>
 
             <Flex alignItems={'center'}>
               <Stack direction={'row'} spacing={7}>

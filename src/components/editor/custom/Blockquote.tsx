@@ -12,7 +12,7 @@ export const BlockQuote: FC<CustomEditorProps> = ({
       {...attributes}
       style={{ ...style }}
       as="blockquote"
-      bg="#f9f9f9"
+      backgroundColor="gray.100"
       borderLeft="10px solid #ccc"
       margin="1.5em 10px"
       padding="0.5em 10px"
