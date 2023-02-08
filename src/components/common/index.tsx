@@ -1,5 +1,6 @@
 import React, { Ref, PropsWithChildren } from 'react';
 import ReactDOM from 'react-dom';
+import { motion } from 'framer-motion';
 
 import { Box, Container, Flex } from '@chakra-ui/react';
 
@@ -24,7 +25,9 @@ export const Button = React.forwardRef(
     ref: Ref<OrNull<null>>
   ) => (
     <Box
-      as="span"
+      as={motion.span}
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.95 }}
       boxSize={'20px'}
       cursor={'pointer'}
       color={reversed ? (active ? 'white' : '#aaa') : active ? 'black' : '#ccc'}

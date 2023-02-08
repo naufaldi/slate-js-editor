@@ -59,7 +59,7 @@ const Footer = () => {
         align={{ base: 'center', md: 'center' }}
       >
         <Text>SliteJS</Text>
-        <Text>© 2022 Chakra Templates. All rights reserved</Text>
+        <Text>© 2022 Naufaldi Rafif S. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={'https://twitter.com/f2aldi'}>
             <FaTwitter />
