@@ -7,6 +7,7 @@ export default class Document extends NextDocument {
       <Html>
         <Head>
           <title>Simple Slite JS</title>
+          <link rel="icon" href="/favicon.png" />
           <meta
             name="description"
             content="simple slite js with next js and chakra ui"

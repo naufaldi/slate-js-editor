@@ -4,7 +4,7 @@ Slate is a completely customizable framework for building rich text editors.
 
 ## Tech Stack
 
-**Client:** React,NextJS and Chakra UI
+**Client:** Framer Motion,NextJS and Chakra UI
 
 ## Installation
 
