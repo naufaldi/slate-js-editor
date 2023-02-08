@@ -15,6 +15,10 @@ Install Project with yarn
   cd slate-js-editor
   yarn Install
 ```
+## Feature 
+- Simple Animation / Interaction 
+- Custom Code and Quote
+- Dark Mode 
 
 ## Authors
 
